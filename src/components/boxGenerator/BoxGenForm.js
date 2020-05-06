@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const BoxGenForm = (props) => {
 
-    const {state, setState} = props;
+    const { state, setState } = props;
     const [color, setColor] = useState("");
     const [height, setHeight] = useState("100");
 
@@ -15,12 +15,12 @@ const BoxGenForm = (props) => {
                 border: "3px solid " + color,
                 height: height + "px"
             },
-            color : color,
+            color: color,
             height: height
         }
         console.log(newestObj);
         setColor("");
-        setHeight(200);
+        setHeight(100);
         setState(state.concat([newestObj]));
     }
 

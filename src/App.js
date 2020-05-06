@@ -4,11 +4,13 @@ import './App.css';
 // import HookForm from './components/hooks/HookForm';
 // import HookDisplay from './components/hooks/HookDisplay';
 // import AnotherForm from './components/moreForms/AnotherForm';
-import BoxGen from './components/boxGenerator/BoxGen';
+// import BoxGen from './components/boxGenerator/BoxGen';
+// import Tab from './components/funWithTabs/Tab';
+import ToDoList from './components/toDoList/ToDoList';
 
 function App() {
 
-  const [ state, setState ] = useState({
+  const [state, setState] = useState({
     username: "",
     email: "",
     password: "",
@@ -21,7 +23,9 @@ function App() {
       {/* <HookDisplay data={state}/> */}
       {/* <hr/> */}
       {/* <AnotherForm /> */}
-      <BoxGen />
+      {/* <BoxGen /> */}
+      {/* <Tab /> */}
+      <ToDoList />
 
     </div>
   );
