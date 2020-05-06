@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+// import HookForm from './components/hooks/HookForm';
+// import HookDisplay from './components/hooks/HookDisplay';
+// import AnotherForm from './components/moreForms/AnotherForm';
+import BoxGen from './components/boxGenerator/BoxGen';
+
 function App() {
+
+  const [ state, setState ] = useState({
+    username: "",
+    email: "",
+    password: "",
+    cPassword: ""
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <HookForm inputs={state} setInputs={setState}/> */}
+      {/* <HookDisplay data={state}/> */}
+      {/* <hr/> */}
+      {/* <AnotherForm /> */}
+      <BoxGen />
+
     </div>
   );
 }

@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+.boldMe {
+  font-weight: bolder;
+  color: red;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
