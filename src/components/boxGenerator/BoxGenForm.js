@@ -22,6 +22,16 @@ const BoxGenForm = (props) => {
         setColor("");
         setHeight(100);
         setState(state.concat([newestObj]));
+        // // alternative way to write this
+        // setState([...state, {
+        //     style: {
+        //         display: "inline-block",
+        //         border: "3px solid " + color,
+        //         height: height + "px"
+        //     },
+        //     color: color,
+        //     height: height
+        // }])
     }
 
     // event handlers

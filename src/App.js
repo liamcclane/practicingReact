@@ -6,7 +6,8 @@ import './App.css';
 // import AnotherForm from './components/moreForms/AnotherForm';
 // import BoxGen from './components/boxGenerator/BoxGen';
 // import Tab from './components/funWithTabs/Tab';
-import ToDoList from './components/toDoList/ToDoList';
+// import ToDoList from './components/toDoList/ToDoList';
+import PokeAPI from './components/PokeAPI';
 
 function App() {
 
@@ -25,7 +26,9 @@ function App() {
       {/* <AnotherForm /> */}
       {/* <BoxGen /> */}
       {/* <Tab /> */}
-      <ToDoList />
+      {/* <ToDoList /> */}
+      <PokeAPI />
+
 
     </div>
   );

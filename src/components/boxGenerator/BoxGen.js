@@ -5,8 +5,8 @@ import BoxGenDisplay from './BoxGenDisplay';
 
 const BoxGen = (props) => {
     const [state, setState] = useState([]);
-    console.log("state");
-    console.log(state);
+    // console.log("state");
+    // console.log(state);
 
     return (
         <>
