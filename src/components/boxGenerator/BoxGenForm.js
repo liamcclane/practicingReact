@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const BoxGenForm = (props) => {
+const BoxGenForm = ({state, setState}) => {
 
-    const { state, setState } = props;
+    // const { state, setState } = props;
     const [color, setColor] = useState("");
     const [height, setHeight] = useState("100");
 
@@ -12,7 +12,8 @@ const BoxGenForm = (props) => {
         const newestObj = {
             style: {
                 display: "inline-block",
-                border: "3px solid " + color,
+                backgroundColor: "" + color,
+                color:"lightblue",
                 height: height + "px"
             },
             color: color,
