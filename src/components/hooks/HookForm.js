@@ -39,7 +39,7 @@ const HookForm = (props) => {
                     </div>
                     <div className="row p-1">
                         <h6 className="col-3">Password: </h6>
-                        <input className="form-control col-8 " type="text" onChange={onChange} name="password" />
+                        <input className="form-control col-8 " type="password" onChange={onChange} name="password" />
                     </div>
                     <input className="btn btn-small btn-outline-success mt-3" type="submit" value="Create User" />
                 </div>

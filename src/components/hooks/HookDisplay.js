@@ -24,9 +24,6 @@ const HookDisplay = (props) => {
                     <span className="col-8">{user.password}</span>
                 </div>
             </div>
-            {/* <p><span className="boldMe">Username : </span> {username}</p>
-            <p><span className="boldMe">email : </span> {email}</p>
-            <p><span className="boldMe">password : </span> {password}</p> */}
         </div>
     )
 

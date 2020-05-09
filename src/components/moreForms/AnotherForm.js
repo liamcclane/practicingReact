@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 
-const style = {
-    height: '300px',
-}
-
 const AnotherForm = (props) => {
-    // // variables
+    // variables : these variables live inside the component, and can be passed to the children
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
@@ -69,7 +65,7 @@ const AnotherForm = (props) => {
         setConfirmPassword(e.target.value);
         let str = "";
         for (let i = 0; i < confirmPassword.length; i++) {
-            console.log(confirmPassword[i]); 
+            console.log(confirmPassword[i]);
             console.log(password[i]);
             if (confirmPassword[i] != password[i]) {
                 str += "passwords do NOT match";
@@ -81,10 +77,12 @@ const AnotherForm = (props) => {
     }
     return (
         <>
-            <h1>Hello AnotherForm</h1>
-            <form onSubmit={createUser}>
+            <h1>Another Form</h1>
+            <p>this form have live validations</p>
+            <form onSubmit={createUser} className="form-group">
                 <div>
-                    First Name : <input type="text" name="firstName" onChange={firstNameHandler} />
+                    First Name : <input type="text" name="firstName"
+                        onChange={firstNameHandler} className="form-control" />
                     {
                         firstNameError
                             ? <p className="boldMe">{firstNameError}</p>
@@ -92,7 +90,8 @@ const AnotherForm = (props) => {
                     }
                 </div>
                 <div>
-                    Last Name: <input type="text" name="lastName" onChange={lastNameHandler} />
+                    Last Name: <input type="text" name="lastName"
+                        onChange={lastNameHandler} className="form-control" />
                     {
                         lastNameError
                             ? <p className="boldMe">{lastNameError}</p>
@@ -100,7 +99,8 @@ const AnotherForm = (props) => {
                     }
                 </div>
                 <div>
-                    Email : <input type="text" name="email" onChange={emailHandler} />
+                    Email : <input type="text" name="email"
+                        onChange={emailHandler} className="form-control" />
                     {
                         emailError
                             ? <p className="boldMe">{emailError}</p>
@@ -108,7 +108,9 @@ const AnotherForm = (props) => {
                     }
                 </div>
                 <div>
-                    Password : <input type="password" name="password" onChange={passwordHandler} />
+                    Password :
+                    <input type="password" name="password"
+                        onChange={passwordHandler} className="form-control" />
                     {
                         passwordError
                             ? <p className="boldMe">{passwordError}</p>
@@ -116,14 +118,17 @@ const AnotherForm = (props) => {
                     }
                 </div>
                 <div>
-                    Confirm Password : <input type="password" name="password" onChange={confirmPasswordHandler} />
+                    Confirm Password :
+                    <input type="password" name="password"
+                        onChange={confirmPasswordHandler} className="form-control" />
                     {
                         confirmPasswordError
                             ? <p className="boldMe">{confirmPasswordError}</p>
                             : ""
                     }
                 </div>
-                <input style={style} type="submit" value="Submit and Create new user!" />
+                <input type="submit"  className="btn btn-small btn-primary"
+                 value="Submit and Create new user!" />
             </form>
         </>
     )

@@ -8,7 +8,7 @@ const NavBar = (props) => {
     return (
         <div className="navbar navbar-light bg-dark">
             <div className="container">
-                <img src={reactLogo} className="d-inline-block align-top" alt="react logo"></img>
+                <img src={reactLogo} className="d-inline-block align-top" height="50" width="50" alt="react logo"></img>
                 <ul className="row list-unstyled">
                     <Link to="/"
                         className="btn btn-small btn-outline-secondary ml-2"

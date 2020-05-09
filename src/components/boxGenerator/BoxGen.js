@@ -9,15 +9,16 @@ const BoxGen = (props) => {
     // console.log(state);
 
     return (
-        <>
-            <h1>Hello and Welcome, lets make some boxes</h1>
-            <p>Just input a valid color and height for the box and it will be outlined in that color</p>
-            <BoxGenFrom state={state} setState={setState} />
-            {state.map((val,i) => <BoxGenDisplay key={i} singleBoxDetails={val} />)}
-            {/* <div style={{display:"inline-block", color: 'red', height: "300px", border:'4px solid red' }}>
-                Placeholder
-            </div> */}
-        </>
+        <div className="row justify-content-center">
+            <div className="container-fluid">
+                <h1 className="" >Box Generator</h1>
+                <p className="">Just input a valid color and height for the box and it will be outlined in that color</p>
+                <BoxGenFrom className="" state={state} setState={setState} />
+            <hr />
+            {state.map((val, i) => <BoxGenDisplay key={i} singleBoxDetails={val} />)}
+
+            </div>
+        </div>
     )
 };
 

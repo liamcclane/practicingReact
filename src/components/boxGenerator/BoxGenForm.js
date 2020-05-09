@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+// import './../../static/bootstrap.css';
 
-const BoxGenForm = ({state, setState}) => {
+const BoxGenForm = ({ state, setState }) => {
 
     // const { state, setState } = props;
-    const [color, setColor] = useState("");
+    const [color, setColor] = useState('');
     const [height, setHeight] = useState("100");
 
     // functions
@@ -12,8 +13,9 @@ const BoxGenForm = ({state, setState}) => {
         const newestObj = {
             style: {
                 display: "inline-block",
-                backgroundColor: "" + color,
-                color:"lightblue",
+                outline: "1px solid black",
+                backgroundColor: color,
+                color: "lightblue",
                 height: height + "px"
             },
             color: color,
@@ -45,10 +47,17 @@ const BoxGenForm = ({state, setState}) => {
 
     return (
         <>
-            <form onSubmit={createBox}>
-                Color : <input placeholder="color example red" value={color} type="text" onChange={colorHandler} />
-                Height : <input value={height} type="number" max="400" min="10" step="5" onChange={heightHandler} />
-                <input type="submit" value="create a new box" />
+            <form onSubmit={createBox} className="form-row">
+                <div className="col">
+                    <input className="form-control" placeholder="color"
+                        value={color} type="text" onChange={colorHandler} />
+                </div>
+                <div className="col">
+                    <input className="form-control" value={height}
+                        type="number" max="400" min="10" step="5"
+                        onChange={heightHandler} />
+                </div>
+                <input type="submit" className="btn btn-small btn-outline-info" value="create a new box" />
             </form>
         </>
     )
