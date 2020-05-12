@@ -99,7 +99,7 @@ const Tab = (props) => {
         <>
             <h1>Click on a Tab and show some content</h1>
             <div className="navbar">
-                {state.map((val, i) => <div className="btn btn-outline-primary"
+                {state.map((val, i) => <div className="btn btn-outline-info"
                     key={i} onClick={(e) => clickHandler(e, val)}>{val.label}
                 </div>)}
             </div>

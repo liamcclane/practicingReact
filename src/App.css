@@ -9,6 +9,21 @@
   height: 40vmin;
   pointer-events: none;
 }
+#attack-moves {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  /* background-color: yellow; */
+  height: 500px;
+}
+#blah{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: white;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -38,4 +53,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+.no-underline {
+  list-style: none;
+  text-decoration: none;
+}
+.darkReact {
+  background-color: rgb(34,34,34);
+}
+.darkishReact {
+  background-color: rgba(34, 34, 34, 0.747);
+}
+.blueReact {
+  color: #61dafb;
+}
+.blueishReact {
+  color: #38a5c4;
+}
+.blueReact-bg {
+  background-color: #61dafb;
 }

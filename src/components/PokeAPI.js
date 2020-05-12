@@ -19,7 +19,15 @@ const PokeAPI = (props) => {
                 // // console.log(p);
                 // arr = p.map(val => val.name);
                 // setState(arr);
-                setState(response.results);
+                setState(response.results.map(val => {
+                    const i = require(`./../static/pokemonImgs/${val.name}.jpg`);
+                    const capName = val.name[0].toUpperCase() + val.name.slice(1, val.name.length);
+                    return ({
+                        ...val,
+                        imgPath: i,
+                        capName: capName
+                    })
+                }));
             })
             .catch(err => {
                 console.log(err);
@@ -29,19 +37,24 @@ const PokeAPI = (props) => {
     const getPokeAbilities = (e, obj) => {
         e.preventDefault();
         // let linkToPoke = obj.url;
-        setChosenPoke(obj.name);
-        axios.get(obj.url)
-            .then(response => {
-                // let movesArr = response.data.moves.map(val=>val.move.name);
-                // console.log(movesArr);
-                setPokeAbilities(response.data.moves.map(val => val.move.name));
-                // console.log("pokeAbilities")
-                // console.log(pokeAbilities)
-            })
+        if(chosenPoke === obj.capName){
+            setPokeAbilities([]);
+            setChosenPoke("");
+        } else {
+            setChosenPoke(obj.capName);
+            axios.get(obj.url)
+                .then(response => {
+                    // let movesArr = response.data.moves.map(val=>val.move.name);
+                    // console.log(movesArr);
+                    setPokeAbilities(response.data.moves.map(val => val.move.name));
+                    // console.log("pokeAbilities")
+                    // console.log(pokeAbilities)
+                })
+        }
     }
 
     return (
-        <div>
+        <>
             <h1>Pokemon Promises</h1>
             <p>Click on a pokemon to see it's moves</p>
             <div className="row justify-content-center">
@@ -51,20 +64,21 @@ const PokeAPI = (props) => {
                         onClick={e => console.log("this button does nothing now, it used to fetch the data but now we have useEffect and axios imports")}
                     >Does nothing now</div> */}
                     <div className="row justify-content-between">
-                        <ul className="list-group col-5">
+                        <div className="col-9">
                             <h3>V2 Pokemon</h3>
-                            {state.map((val, i) => {
-                                return (
-                                    <li
-                                        className="list-group-item list-group-item-light"
-                                        key={i}
-                                        onClick={e => getPokeAbilities(e, val)}
-                                    >{val.name}
-                                    </li>)
-                            })}
-                        </ul>
-                        <ul className="list-group col-5">
-                            {chosenPoke ? <h3>{chosenPoke} Moves</h3> : ""}
+                            <div className="row">
+                                {state.map((val, i) => {
+                                    return (
+                                        <div key={i} className="col-4"
+                                            onClick={e => getPokeAbilities(e, val)}>
+                                            {val.capName}
+                                            <img className="col" src={val.imgPath} alt={val.capName}></img>
+                                        </div>)
+                                })}
+                            </div>
+                        </div>
+                        <ul className="list-group col-3 overflow-auto" id="attack-moves">
+                            {chosenPoke ? <h3 id="blah">{chosenPoke}'s Moves</h3> : <h3>Choose a Pokemon</h3>}
                             {pokeAbilities.map((val, i) => {
                                 return (
                                     <li
@@ -78,7 +92,7 @@ const PokeAPI = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

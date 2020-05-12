@@ -6,20 +6,20 @@ import './../static/bootstrap.css';
 const NavBar = (props) => {
     const { projects } = props;
     return (
-        <div className="navbar navbar-light bg-dark">
+        <div className="navbar darkReact">
             <div className="container">
                 <img src={reactLogo} className="d-inline-block align-top" height="50" width="50" alt="react logo"></img>
-                <ul className="row list-unstyled">
+                <div className="row justify-content-around list-unstyled">
                     <Link to="/"
-                        className="btn btn-small btn-outline-secondary ml-2"
+                        className="ml-2 blueReact"
                     >HOME</Link>
                     {projects.map((val, i) => {
                         return (
-                            <li>
+                            <div>
                                 <Link to={val.url}
-                                    className="btn btn-small btn-outline-secondary ml-2"
+                                    className="ml-2 on-underline blueReact"
                                 >{val.name}</Link>
-                            </li>
+                            </div>
                         )
                     })}
                     {/* <li>
@@ -62,7 +62,7 @@ const NavBar = (props) => {
                         <Link to="/pokeAPI"></Link>
                     PokeAPI
                 </li> */}
-                </ul>
+                </div>
             </div>
         </div>
     )

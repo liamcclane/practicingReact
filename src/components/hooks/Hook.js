@@ -9,8 +9,7 @@ const Hook = (p) => {
     const [user, setUser] = useState({
         username: "",
         email: "",
-        password: "",
-        cPassword: ""
+        password: ""
     })
     return (
         <div className="row justify-content-around">
