@@ -6,9 +6,9 @@ const Welcome = props => {
     const { projects } = props;
     return (
         <>
-            <h1>Welcome!</h1>
+            <h1>Hello React</h1>
             <div className="row justify-content-center">
-                <p>This is my react playground, click on the navigation bar to click around to the projects</p>
+                <p>Read about all the projects below</p>
             </div>
             <div className="row justify-content-center">
                 {projects.map((val, i) => {

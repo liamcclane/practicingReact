@@ -8,9 +8,9 @@ const ProjectDescription = props => {
         <>
             <h2><Link className="blueReact" to={project.url}>{project.name}</Link></h2>
             <p>{project.description}</p>
-            <hr />
-            <h5>Cool Features</h5>
-            <ul>
+            <hr/>
+            <p className="font-weight-bold">Cool Features Implemented</p>
+            <ul className="no-underline text-left">
                 {project.toolsLearned.map((val, i) => {
                     return (
                         <li key={i}>{val}</li>
