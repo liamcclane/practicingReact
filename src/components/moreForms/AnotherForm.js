@@ -132,33 +132,5 @@ const AnotherForm = (props) => {
             </form>
         </>
     )
-    // const [state, setState] = useState({
-    //     firstName: "",
-    //     lastName: "",
-    //     email: "",
-    //     password: "",
-    //     errorMessages: {
-    //         firstNameError: "First Name required",
-    //         lastNameError: "Last Name required",
-    //         emailError: "Email required",
-    //         passwordError: "Password is required"
-    //     }
-    // });
-    // const onChange = (e) => {
-    //     if (state.firstName.length === 1) {
-    //         console.log("hello")
-    //         setState({
-    //             ...state,
-    //             errorMessages: {
-    //                 ...state.errorMessages,
-    //                 firstNameError: "First name must contain at least 3 characters"
-    //             }
-    //         })
-    //     }
-    //     setState({
-    //         ...state,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
 }
 export default AnotherForm;
