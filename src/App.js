@@ -13,6 +13,7 @@ import Tab from './components/funWithTabs/Tab';
 import ToDoList from './components/toDoList/ToDoList';
 import PokeAPI from './components/PokeAPI';
 import Checkerboard from './components/checkerboard/Checkerboard';
+import DragNDrop from './components/DragNDrop/DragNDrop';
 
 function App() {
   const [projects, setProjects] = useState([{
@@ -55,6 +56,12 @@ function App() {
       "importing Bootstrap",
       "parsing though objects"
     ]
+  },
+  {
+    name: "Drag N Drop",
+    url:"dragndrop",
+    description: "home made drag and drop features",
+    toolsLearned: ["altering state", "onDrag events"]
   }
   ])
   
@@ -73,6 +80,7 @@ function App() {
           {/* <AnotherForm path="/MoreForms" /> */}
           <ToDoList path="/ToDoList" />
           <PokeAPI path="/PokeAPI" />
+          <DragNDrop path="/dragndrop" />
         </Router>
       </div>
     </div>
