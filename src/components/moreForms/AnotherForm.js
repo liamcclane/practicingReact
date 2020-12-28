@@ -16,31 +16,31 @@ const AnotherForm = (props) => {
     // functions 
     const createUser = (e) => {
         e.preventDefault();
-        
+
         let errors = ["", "", ""];
-        
+
         if (firstName.length === 0) errors[0] = "First name required"
         else if (firstName.length < 3) errors[0] = "First name must be at least 3 characters"
         else errors[0] = ""
         setFirstNameError(errors[0]);
-        
+
         if (lastName.length === 0) errors[1] = "Last name required"
         else if (lastName.length < 3) errors[1] = "Last name must be more than 3 characters"
         else errors = ""
         setLastNameError(errors[1]);
-        
+
         // if (email.length === 0) errors[2] = "email required"
         // // else if (!(email.includes("lia"))) errors[2] = "invalid email"
         // else errors[2] = ""
         setEmailError(errors[2]);
-        
+
         if (password.length === 0) {
             setPasswordError("password required")
             // return;
         }
-        
+
         if (confirmPassword.length === 0) setConfirmPasswordError("Please input to confirm your password")
-        
+
         if (password.length != confirmPassword.length) setPasswordError("Password lengths do not match");
         else {
             for (let i = 0; i < password.length; i++) {
@@ -58,16 +58,16 @@ const AnotherForm = (props) => {
             emailError.length === 0 &&
             passwordError.length === 0 &&
             confirmPasswordError.length === 0
-            ) {
-                console.log("Welcome ", firstName);
-            }
-            console.log("errors");
-            console.log(errors);
+        ) {
+            console.log("Welcome ", firstName);
         }
-        // handlers
-        const firstNameHandler = (e) => {
-            setFirstName(e.target.value);
-            if (firstName.length >= 0 && firstName.length <= 2) {
+        console.log("errors");
+        console.log(errors);
+    }
+    // handlers
+    const firstNameHandler = (e) => {
+        setFirstName(e.target.value);
+        if (firstName.length >= 0 && firstName.length <= 2) {
             setFirstNameError("First name must contain at least 3 characters");
         } else if (firstName.length >= 3) {
             setFirstNameError("");
